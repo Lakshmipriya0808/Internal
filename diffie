@@ -1,0 +1,116 @@
+PROGRAM:
+ **HTMLWITHJAVASCRIPT**:
+ <!DOCTYPE html>
+ <html>
+ <head>
+ <title>DHA</title>
+ <style>
+ body {
+ font-family: Arial, sans-serif; margin: 0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ background-color: #f0f0f0;
+ }
+ .container {
+ background-color: #fff;
+ border-radius: 8px;
+ padding: 20px;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); width: 360px;
+ }
+ label {
+ display: block;
+ margin-bottom: 5px;
+ color: #555;
+ }
+ input {
+ width: 100%;
+ padding: 8px;
+ margin-bottom: 10px;
+ margin-right: 10px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ }
+ button {
+ padding: 10px 15px;
+ background-color: #007bff;
+ color: #fff;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+width: 100%;
+ }
+ button:hover {
+ background-color: #0056b3;
+ }
+ p {
+ margin-top: 20px;
+ color: #333;
+ }
+ </style>
+ <script>
+ function power(a, b, p) {
+ if (b == 1)
+ return a;
+ else
+ return((Math.pow(a, b)) % p);
+ }
+ function diffie_hellman() {
+ var P, G, x, a, y, b, ka, kb;
+ P =document.getElementById("field1").value;
+ G=document.getElementById("field2").value;
+ a =document.getElementById("field3").value;
+ b =document.getElementById("field4").value;
+ x =power(G, a, P);
+ y =power(G, b, P);
+ document.getElementById("output1").innerHTML = x ;
+ document.getElementById("output2").innerHTML = y ;
+ }
+ </script>
+ </head>
+ <body>
+ <div class="container">
+ <h2 style="text-align: center;">Diffie Hellman</h2> <label for="field1">Value of
+ P:</label>
+ <input type="text" id="field1" required>
+ <label for="field2">Value of G(Primitive root of P):</label> <input type="text" id="field2"
+ required>
+ <label for="field3">Private key a for user1:</label> <input type="text" id="field3"
+ required>
+<label for="field4">Private key b for user2:</label> <input type="text" id="field4"
+ required>
+ <button id="submitButton"
+ onclick="diffie_hellman()">Submit</button>
+ <p>Secret key for the User1: <span id="output1"></p></p> <p>Secret key for the User2:
+ <span id="output2"></p></p> </div>
+ </body>
+ </html>
+ CODE:
+ class DHA {
+ private static long power(long a, long b, long p)
+ {
+ if (b == 1)
+ return a;
+ else
+ }
+ return (((long)Math.pow(a, b)) % p);
+ public static void main(String[] args)
+ {
+ long P, G, x, a, y, b, ka, kb;
+ P =23;
+ System.out.println("The value of P:" + P);
+ G=9;
+ System.out.println("The value of G:" + G);
+ a =4;
+ System.out.println("The private key a for Person 1:"+ a);
+ x =power(G, a, P);
+ b =3;
+ System.out.println("The private key b for Person 2:"+ b);
+ y =power(G, b, P);
+ ka = power(y, a, P);
+ kb = power(x, b, P);
+ System.out.println("Secret key for the Person 1 is:"+ ka);
+ System.out.println("Secret key for the Person 2 is:"+ kb);
+ }
+ }
