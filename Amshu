@@ -313,3 +313,12 @@ message = input("Enter a message to hash: ")
 # Hash the message and print the result
 md5_hash = md5(message)
 print("MD5 hash:", md5_hash)
+
+
+***********************************************************************************************************
+SHA
+import hashlib
+str = "GeeksforGeeks"
+result = hashlib.sha1(str.encode()) 
+print("The hexadecimal equivalent of SHA1 is : ") 
+print(result.hexdigest())
