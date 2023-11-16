@@ -539,7 +539,7 @@ def HillCipher(message, key):
 	# the encrypted vector
 	encrypt(messageVector)
 
-	# Generate the encrypted text 
+	# Generate the encrypted text
 	# from the encrypted vector
 	CipherText = []
 	for i in range(3):
@@ -548,10 +548,10 @@ def HillCipher(message, key):
 	# Finally print the ciphertext
 	print("Ciphertext: ", "".join(CipherText))
 
-# Driver Code
+
 def main():
 
-	# Get the message to 
+	# Get the message to
 	# be encrypted
 	message = "ACT"
 
@@ -559,12 +559,6 @@ def main():
 	key = "GYBNQKURP"
 
 	HillCipher(message, key)
-
-if __name__ == "__main__":
-	main()
-
-# This code is contributed 
-# by Pratik Somwanshi
 ***************************************************************************************************
 PLAY FAIR CIPHER 
 # Python program to implement Playfair Cipher
